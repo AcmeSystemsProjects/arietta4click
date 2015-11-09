@@ -1,23 +1,19 @@
-#Ablib Acme Board Python library
+#Python module to manage the Acme boards pins
 
-A Python library for controlling the pins and daisy modules on:
+acme-pin is a fork of [ablib.py](https://github.com/tanzilli/ablib) cleaned from the 
+all the Daisy functions. The main purpose of this module is to have
+an easy control on the io pins of the following boards:
 
-* [Aria G25](http://www.acmesystems.it/aria)
 * [Arietta G25](http://www.acmesystems.it/arietta)
-* [Terra Board](http://www.acmesystems.it/terra) 
-* [FOX Board G20](http://www.acmesystems.it/FOXG20) 
-* [Daisy modules](http://www.acmesystems.it/index_daisy)
+* [Aria G25](http://www.acmesystems.it/aria)
+* [Acqua A5](http://www.acmesystems.it/acqua)
 
 ##Installation
 
 ```
-# git clone git://github.com/tanzilli/ablib.git
-# cd ablib
-~/ablib# python setup.py install
+# git clone git://github.com/tanzilli/acme-pin.git
+# cd acme-pin
+~/acme-pin# python setup.py install
 ```
 
-##Code examples
-
-* [Acme Systems playground](http://www.acmesystems.it/playground) 
-
-
+(c) 2015 Sergio Tanzilli - [http://www.acmesystems.it](http://www.acmesystems.it)
