@@ -7,8 +7,8 @@ import time
 print "REALY click example"
 print "Type ctrl-C to exit"
  
-REL1 = acmepins.Pin('J4.11','out')
-REL2 = acmepins.Pin('J4.13','out')
+REL1 = acmepins.Pin('mikroBUS.1.PWM','out')
+REL2 = acmepins.Pin('mikroBUS.1.CS' ,'out')
  
 while True:
 	time.sleep(1)
