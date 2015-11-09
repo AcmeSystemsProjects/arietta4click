@@ -15,28 +15,10 @@
 __version__ = 'v0.1'
 
 import os.path
-import platform
-import smbus
 import time
-import serial
-import fcntl
-import struct
 import thread
 import threading
 import select
-import math
-
-serial_ports = {
-	'D1' :  '/dev/ttyS2',
-	'D2' :  '/dev/ttyS5',
-	'D3' :  '/dev/ttyS1',
-	'D5' :  '/dev/ttyS6',
-	'D6' :  '/dev/ttyS4',
-	'D8' :  '/dev/ttyS3',
-	'D10':  '/dev/ttyS4',
-	'D13':  '/dev/ttyS2',
-	'D17':  '/dev/ttyS1'
-}
 
 #Pin to Kernel ID table
 pin2kid = {
