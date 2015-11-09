@@ -267,8 +267,8 @@ pinlevel = {
 mcuName2pinname = {
 #Arietta G25
     'Arietta_G25' : {
-        'PA23' :  'J4.7',
-        'PA22' :  'J4.8',
+        'PA23' : 'J4.7',
+        'PA22' : 'J4.8',
         'PA21' : 'J4.10',
         'PA24' : 'J4.11',
         'PA31' : 'J4.12',
@@ -425,23 +425,23 @@ mcuName2pinname = {
     }
 }
 
-def getVersion ():
+def get_version ():
 	return __version__
 
 def get_gpio_path(kernel_id):
-	kernel_id=kernel_id-32	
+	kernel_id=kernel_id
 	
 	iopath="/sys/class/gpio/pio" 
 	if kernel_id>=0 and kernel_id<=31:
-		iopath="%sA%d" % (iopath,kernel_id-0)
+		iopath="%sA%d" % (iopath,kernel_id)
 	if kernel_id>=32 and kernel_id<=63:
-		iopath="%sB%d" % (iopath,kernel_id-32)
+		iopath="%sB%d" % (iopath,kernel_id)
 	if kernel_id>=64 and kernel_id<=95:
-		iopath="%sC%d" % (iopath,kernel_id-64)
+		iopath="%sC%d" % (iopath,kernel_id)
 	if kernel_id>=96 and kernel_id<=127:
-		iopath="%sD%d" % (iopath,kernel_id-96)
+		iopath="%sD%d" % (iopath,kernel_id)
 	if kernel_id>=128 and kernel_id<=159:
-		iopath="%sE%d" % (iopath,kernel_id-128)
+		iopath="%sE%d" % (iopath,kernel_id)
 	return iopath		
 
 
@@ -452,14 +452,14 @@ def export(kernel_id):
 	iopath=get_gpio_path(kernel_id)
 	if not os.path.exists(iopath): 
 		f = open('/sys/class/gpio/export','w')
-		f.write(str(kernel_id-32))
+		f.write(str(kernel_id))
 		f.close()
 
 def unexport(kernel_id):
 	iopath=get_gpio_path(kernel_id)
 	if os.path.exists(iopath): 
 		f = open('/sys/class/gpio/unexport','w')
-		f.write(str(kernel_id-32))
+		f.write(str(kernel_id))
 		f.close()
 
 def direction(kernel_id,direct):
@@ -492,14 +492,6 @@ def set_edge(kernel_id,value):
 		    f = open(iopath + '/edge','w')
 		    f.write(value)
 		    f.close()
-
-def existI2Cdevice(bus_id,i2c_address):
-	i2c_bus = smbus.SMBus(bus_id)
-	try:
-		i2c_bus.write_byte(i2c_address,0x00)
-		return True
-	except:
-		return False
 
 def pinname2kernelid(pinname):
 	"""
@@ -576,22 +568,16 @@ class Pin():
 	def off(self):
 		set_value(self.kernel_id,0)
 
-	def digitalWrite(self,level):
-		set_value(self.kernel_id,pinlevel[level])
-
 	def set_value(self,value):
 		return set_value(self.kernel_id,value)
-
-	def digitalRead(self):
-		return get_value(self.kernel_id)
 
 	def get_value(self):
 		return get_value(self.kernel_id)
 
-	get = get_value
-
 	def wait_edge(self,fd,callback,debouncingtime):
-		debouncingtime=debouncingtime/1000.0 # converto in millisecondi
+		# Conver in millisecs
+		debouncingtime=debouncingtime/1000.0 
+		
 		timestampprec=time.time()
 		counter=0
 		po = select.epoll()
