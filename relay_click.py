@@ -4,7 +4,7 @@
 import clickboard
 import time
  
-print "REALY click example"
+print "RELAY click example"
 print "Type ctrl-C to exit"
 
 mikroBUS_id = 1
