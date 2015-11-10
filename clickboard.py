@@ -58,7 +58,6 @@ class RelayClick():
 
 	def __init__(self,component_name="REL1",mikroBUS_id=1,acme_board_name="arietta4click",):
 		clickname=acme_board_name + "." + str(mikroBUS_id) + ".RelayClick." + component_name
-		print clickname
 		self.pin = acmepins.Pin(clickname2pin[clickname],"out")
 
 	def on(self):
@@ -67,4 +66,6 @@ class RelayClick():
 	def off(self):
 		self.pin.off()
 
+	def __del__(self):
+		self.pin.off()
 			
