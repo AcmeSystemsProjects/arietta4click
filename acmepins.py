@@ -23,33 +23,6 @@ import select
 #Pin to Kernel ID table
 pin2kid = {
 
-#MikroBUS pins
-	'mikroBUS.1.AN'   :	43, #PB11
-	'mikroBUS.1.RST'  : 67, #PC3
-	'mikroBUS.1.CS'   : 31, #PA31
-	'mikroBUS.1.SCK'  : 23, #PA23
-	'mikroBUS.1.MISO' : 21, #PA21
-	'mikroBUS.1.MOSI' : 22, #PA22
-	'mikroBUS.1.PWM'  : 45, #PB13
-	'mikroBUS.1.INT'  : 66, #PC2
-	'mikroBUS.1.RX'   : 1,  #PA1
-	'mikroBUS.1.TX'   : 0,  #PA0
-	'mikroBUS.1.SCL'  : 65, #PC1
-	'mikroBUS.1.SDA'  : 64, #PC0
-		
-	'mikroBUS.2.AN'   : 44, #PB12
-	'mikroBUS.2.RST'  : 92, #PC28
-	'mikroBUS.2.CS'   : 30, #PA30
-	'mikroBUS.2.SCK'  : 23, #PA23
-	'mikroBUS.2.MISO' : 2,  #PA2
-	'mikroBUS.2.MOSI' : 22, #PA22
-	'mikroBUS.2.PWM'  : 46, #PB14
-	'mikroBUS.2.INT'  : 68, #PC4
-	'mikroBUS.2.RX'   : 6,  #PA6
-	'mikroBUS.2.TX'   : 5,  #PA5
-	'mikroBUS.2.SCL'  : 65, #PC1
-	'mikroBUS.2.SDA'  : 64, #PC0
-
 #Arietta G25
 	'J4.7'   :  23, #PA23
 	'J4.8'   :  22, #PA22
@@ -404,7 +377,6 @@ class Pin():
 	"""
 	kernel_id=None
 	fd=None
-
 
 	def __init__(self,pin,mode):
 		self.kernel_id=pinname2kernelid(pin)
