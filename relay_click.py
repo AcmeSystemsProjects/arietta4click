@@ -1,4 +1,4 @@
-#Turn on both the relays for one second 
+#Turn-on both relays for one second 
 
 import clickboard
 import time
