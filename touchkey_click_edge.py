@@ -22,7 +22,7 @@ KeyD = clickboard.TouchClick("D",1)
 REL1 = clickboard.RelayClick("REL1",2)
 REL2 = clickboard.RelayClick("REL2",2)
 
-def timedREL1(secs=1)
+def timedREL1(secs=1):
 	REL1.on()
 	time.sleep(secs)
 	REL1.off()
