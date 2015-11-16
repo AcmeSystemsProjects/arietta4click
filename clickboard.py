@@ -86,4 +86,4 @@ class TouchClick():
 		self.pin = acmepins.Pin(clickname2pin[clickname],"in")
 
 	def get_value(self):
-		self.pin.get_value()
+		return self.pin.get_value()
