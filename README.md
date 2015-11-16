@@ -4,7 +4,7 @@ Library and examples to use with [Arietta4click board](http://www.acmesystems.it
  
 ##Installation
 
-	git clone git://github.com/tanzilli/arietta4click.git
+	git clone git://github.com/AcmeSystems/arietta4click.git
 
 ## Links
 
