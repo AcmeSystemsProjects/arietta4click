@@ -87,6 +87,3 @@ class TouchClick():
 
 	def get_value(self):
 		self.pin.get_value()
-
-	def __del__(self):
-		self.pin.off()
