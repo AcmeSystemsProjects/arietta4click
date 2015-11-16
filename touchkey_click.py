@@ -4,6 +4,7 @@ import time
 print "Touchkey click example"
 print "Type ctrl-C to exit"
 
+#mikroBUS Slot number
 mikroBUS = 1 
 
 KeyA = clickboard.TouchClick("A",mikroBUS)
