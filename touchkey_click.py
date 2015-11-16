@@ -1,11 +1,15 @@
-import clickboard
-import time
- 
-print "Touchkey click example"
-print "Type ctrl-C to exit"
+#
+# Touchkey Click board example
+# 
+# Run with: 
+#  python touchkey_click.py
+#
+# Type ctrl-C to exit
+#
 
-#mikroBUS Slot number
-mikroBUS = 1 
+import clickboard
+ 
+mikroBUS = 1 # Slot number to use (1 or 2) 
 
 KeyA = clickboard.TouchClick("A",mikroBUS)
 KeyB = clickboard.TouchClick("B",mikroBUS)
@@ -21,7 +25,3 @@ while True:
 		print "Key C"
 	if KeyD.get_value():
 		print "Key D"
-
-	
-	
-
