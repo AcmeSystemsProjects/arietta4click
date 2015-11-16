@@ -88,7 +88,7 @@ class TouchClick():
 	def get_value(self):
 		return self.pin.get_value()
 
-	def set_edge(self,value="rising",callback,debouncingtime=0):
+	def set_edge(self,value="rising",callback,debouncingtime):
 		self.pin.set_edge(value,callback,debouncingtime)
 
 
