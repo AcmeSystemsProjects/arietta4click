@@ -52,14 +52,14 @@ clickname2pin = {
 	"arietta4click.2.RelayClick.REL1" :	"J4.14", #PA30 30
 	"arietta4click.2.RelayClick.REL2" :	"J4.40", #PB14 46 
 
-	"arietta4click.1.Touchkey.A" :	"J4.33", #PC3
-	"arietta4click.1.Touchkey.B" :	"J4.34", #PB11
-	"arietta4click.1.Touchkey.C" :	"J4.38", #PB13
-	"arietta4click.1.Touchkey.D" :	"J4.35", #PC2
-	"arietta4click.2.Touchkey.A" :	"J4.29", #PC28
-	"arietta4click.2.Touchkey.B" :	"J4.36", #PB12
-	"arietta4click.2.Touchkey.C" :	"J4.40", #PB14
-	"arietta4click.2.Touchkey.D" :	"J4.31"  #PC4
+	"arietta4click.1.TouchkeyClick.A" :	"J4.33", #PC3
+	"arietta4click.1.TouchkeyClick.B" :	"J4.34", #PB11
+	"arietta4click.1.TouchkeyClick.C" :	"J4.38", #PB13
+	"arietta4click.1.TouchkeyClick.D" :	"J4.35", #PC2
+	"arietta4click.2.TouchkeyClick.A" :	"J4.29", #PC28
+	"arietta4click.2.TouchkeyClick.B" :	"J4.36", #PB12
+	"arietta4click.2.TouchkeyClick.C" :	"J4.40", #PB14
+	"arietta4click.2.TouchkeyClick.D" :	"J4.31"  #PC4
 }
 
 class RelayClick():
