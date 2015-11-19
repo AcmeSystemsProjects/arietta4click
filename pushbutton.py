@@ -9,10 +9,10 @@
 
 import acmepins
  
-button = clickboard.TouchClick("A",mikroBUS)
+button = clickboard.TouchClick("J4.10","in")
 
 while True:
 	if button.get_value():
 		print "Pressed"
-	else
+	else:
 		print "Released"

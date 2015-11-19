@@ -10,7 +10,7 @@
 import acmepins
 import time
 
-GREEN = acmepins.Pin("J4.8","out")
+GREEN = acmepins.Pin("J4.8","low")
  
 while (True): 
 	GREEN.on()
