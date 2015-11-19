@@ -9,10 +9,10 @@
 
 import acmepins
 
-button = acmepins.Pin("J4.10","in")
+Button = acmepins.Pin("J4.10","in")
 
 while True:
-	if button.get_value()==0:
+	if Button.get_value()==0:
 		print "Pressed"
 	else:
 		print "Released"
