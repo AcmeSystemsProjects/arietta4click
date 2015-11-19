@@ -9,7 +9,7 @@
 
 import acmepins
  
-button = clickboard.TouchClick("J4.10","in")
+button = acmepins.Pin("J4.10","in")
 
 while True:
 	if button.get_value():
