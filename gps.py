@@ -1,7 +1,12 @@
 import acmepins
 import time
+import datetime
+
 import sys
 import serial
+
+
+
 
 NanoGPS_RST = acmepins.Pin("J4.33","out")
 NanoGPS_PWR = acmepins.Pin("J4.38","out")
@@ -44,8 +49,10 @@ GNSS3_ser = serial.Serial(
 
 
 while True:     
-	print "NanoGPS %s" % (NanoGPS_ser.readline())
-	print "GNSS3   %s" % (GNSS3_ser.readline())
+	print "NanoGPS %s: %s" % \
+	(datetime.datetime.now().isoformat(), NanoGPS_ser.readline())
+	print "GNSS3   %s: %s" % \
+	(datetime.datetime.now().isoformat(), GNSS3_ser.readline())
 
 
 #while True:     
