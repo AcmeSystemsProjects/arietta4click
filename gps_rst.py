@@ -23,7 +23,7 @@ def reset_nano():
 	time.sleep(0.1)
 
 def reset_gnss3():
-	print "Resetting NanoGPS......"
+	print "Resetting GNSS3......"
 	GNSS3_RST = acmepins.Pin("J4.29","out")
 	GNSS3_RST.high()
 	

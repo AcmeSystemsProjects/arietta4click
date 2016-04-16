@@ -89,7 +89,7 @@ def print_msg (gx, x):
 			 
 			if  (gx.data['3Dfix'] == 2):
 				print color['darkyellow'],
-				print "%s ***** FIX 2D" % (gx.named),
+				print "%s ***** FIX 2D" % (gx.name),
 				print color['off']
 
 			if  (gx.data['3Dfix'] == 3):

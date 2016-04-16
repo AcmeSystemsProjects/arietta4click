@@ -40,25 +40,25 @@ class gps():
 		return x
 
     def _float(self, s):
-        """
-        Returns the float value of string s if it exists,
-        or None if s is an empty string.
-        """
-        if s:
-            return float(s)
-        else:
-            return None
+		"""
+		Returns the float value of string s if it exists,
+		or None if s is an empty string.
+		"""
+		try:
+			return float(s)
+		except:
+			return None
 
 
     def _int(self, s):
-        """
-        Returns the int value of string s if it exists,
-        or None if s is an empty string.
-        """
-        if s:
-            return int(s)
-        else:
-            return None
+		"""
+		Returns the int value of string s if it exists,
+		or None if s is an empty string.
+		"""
+		try:
+			return int(s)
+		except:
+			return None
 
 
     def calcCheckSum(self, line):
@@ -113,7 +113,7 @@ class gps():
 
         # GSA has 18 fields
         #print fields
-        assert len(fields) == 18
+        if len(fields) != 18: return
        
         # MsgId = fields[0]
         self.data['AutoSelection'] = fields[1]
