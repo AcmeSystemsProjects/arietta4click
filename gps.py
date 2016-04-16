@@ -129,7 +129,7 @@ while True:
 	x = g2.ser.readline().rstrip("\r\n")
 
 	print_err ("%s %s: %s" % (g2.name, datetime.datetime.now().isoformat(), x))
-    sys.stderr.flush()
+	sys.stderr.flush()
 	
 	print_msg(g2, x)
 	sys.stdout.flush()
