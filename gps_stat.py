@@ -15,25 +15,6 @@ def print_err(*args):
 	sys.stderr.flush()
 
 
-def reset():
-	NanoGPS_RST = acmepins.Pin("J4.33","out")
-	NanoGPS_PWR = acmepins.Pin("J4.38","out")
-	
-	NanoGPS_RST.high()
-	time.sleep(0.3)
-	NanoGPS_RST.low()
-	
-	#Accende
-	NanoGPS_PWR.low()
-	time.sleep(0.1)
-	NanoGPS_PWR.high()
-	time.sleep(2)
-	NanoGPS_PWR.low()
-	time.sleep(0.1)
-	
-	GNSS3_RST = acmepins.Pin("J4.29","out")
-	GNSS3_RST.high()
-
 #
 # DO NOT reset (done in/etc/rc.local  at power on)
 #
@@ -88,17 +69,15 @@ g2=gps('GNSS3', GNSS3_ser)
 
 def print_msg (gx, x):
 	# update status
-	(gsys , id) = gx.parseLine(x)
-
-	print gsys, id
+	id=gx.parseLine(x)
 
 	if (id == 'GSA'):
 		if (gx.data['AutoSelection'] == 'A'):
 			 
 			if  (gx.data['3Dfix'] == 2):
-				print "%s[%s] ***** FIX 2D %s%s" % (color['darkyellow'], gx.name, gsys, color['off'])
+				print "%s[%s] ***** FIX 2D%s" % (color['darkyellow'],gx.name,color['off'])
 			if  (gx.data['3Dfix'] == 3):
-				print "%s[%s] ***** FIX 3D %s%s" % (color['green'], gx.name, gsys, color['off'])
+				print "%s[%s] ***** FIX 3D%s" % (color['green'],gx.name,color['off'])
 				
 				
 	if (id == 'RMC'):
