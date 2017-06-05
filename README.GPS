@@ -1,0 +1,41 @@
+
+# reset GNSS3
+echo "`python gps_rst.py gnss3`\r\n" > /dev/ttyS2
+
+
+echo "`python gps_rtc.py gnss3`\r\n" > /dev/ttyS2
+
+
+#
+#    2.3.40 Packet Type: 607 PMTK_Q_EPO_INFO
+#    EPO Data Valid day check
+#    
+#    Table 2-50: 607 PMTK_Q_EPO_INFO Data Format
+#    DataField: PMTK607
+#    
+#    Example: $PMTK607*33<CR><LF>
+#    Name Unit Default Description
+#    -- -- -- --
+#    
+echo '$PMTK607*33\r\n' > /dev/ttyS2
+
+$PMTK707,55,1900,0,1902,0,0,0,0,0*1C
+
+$PMTK001,707,1*32
+
+#
+# slow down output messages
+#
+echo "`python gps_nmea_freq.py`\r\n" >/dev/ttyS2
+
+
+#
+# serial interface in cooked mode
+#
+
+/bin/stty  -F /dev/ttyS2 sane  ; /bin/stty  -F /dev/ttyS2 ispeed 115200 ospeed 115200 -crtscts cs8 min 0 time 100
+
+#
+# set the RTC inside GPS rx
+#
+echo "`python gps_rtc.py`\r\n" >/dev/ttyS2
