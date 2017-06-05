@@ -70,11 +70,11 @@ $GPGSV,3,3,12,04,21,237,,16,14,048,,05,14,308,,03,08,127,*71
 		for i in range(0, 4):   # [0, 1, 2, 3] as the max number of sat in a msg is 4
 
 			if ( (7+(4*i)) <= max_f):
-				print i
-				print f[4+(4*i)]
-				print f[7+(4*i)]
-				print f[6+(4*i)]
-				print f[5+(4*i)]
+				#print i
+				#print f[4+(4*i)]
+				#print f[7+(4*i)]
+				#print f[6+(4*i)]
+				#print f[5+(4*i)]
 				
 				self.add ( 	f[4+(4*i)], # svprn
 							f[7+(4*i)], # snr
@@ -113,13 +113,16 @@ if __name__ == "__main__":
 	import sys
 	import os
 	
-	newin = os.fdopen(sys.stdin.fileno(), 'r', 80)
+	#newin = os.fdopen(sys.stdin.fileno(), 'r', 80)
 
 	screen = { 'GP': {} , 'GN': {} , 'GL': {} , }
 
 	i = 0
 
-	for line in newin:
+#	for line in newin:
+	while True:
+		line = sys.stdin.readline()
+		if not line: break # EOF
 		
 		line = line.rstrip()
 		line = filter(lambda x: x in string.printable, line)
